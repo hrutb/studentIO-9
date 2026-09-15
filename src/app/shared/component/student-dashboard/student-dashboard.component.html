@@ -1,0 +1,12 @@
+<div class="container">
+
+    <div class="row">
+       <div class="col-md-6">
+             <app-student-form (emitupdateObj)="onUpdate($event)" (emitNewObj)="getAdd($event)" [emiteditObj]="emitObj"></app-student-form>
+       </div>
+        <div class="col-md-6">
+           <app-student-table [getStudent]=" studentArr"  (emiteditStd)="onEdit($event)"></app-student-table>
+        </div>
+    </div>
+
+</div>

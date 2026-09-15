@@ -1,0 +1,39 @@
+<div class="card">
+   <div class="card-header bg-primary"></div>
+   <div class="card-body">
+      <div class="table-responsive">
+            <table class="table table-bordered">
+               <thead>
+                    <tr>
+                      <th>Sr.No</th>
+                      <th>Full name</th>
+                      <th>Email</th>
+                      <th>Contact</th>
+                      <th>City</th>
+                      <th>Is Active</th>
+                      <th>Edit</th>
+                      <th>Remove</th>
+                    </tr>
+               </thead>
+               <tbody>
+                  <tr *ngFor="let std of getStudent; index as i">
+                     <td>{{i+1}}</td>
+                     <td>{{std.fname}} {{std.lname}}</td>
+                     <td>{{std.email}}</td>
+                     <td>{{std.contact}}</td>
+                     <td>{{std.city}}</td>
+                     <td> <mat-checkbox  value="" [checked]='std.isActive===true'><span class="text-light badge" [ngClass]="{
+                          'bg-warning':std.isActive===true ,
+                          'bg-success':std.isActive===false
+                     }">{{std.isActive ? "YES":"No"}}</span></mat-checkbox>
+
+                       </td>
+                     <td><button mat-stroked-button color="primary" (click)="onEditObj(std)">Edit</button></td>
+                     <td><button mat-stroked-button  (click)="onRemove(std.id)" color="warn">Remove</button></td>
+                  </tr>
+               </tbody>
+            </table>
+      </div>
+
+   </div>
+</div>
